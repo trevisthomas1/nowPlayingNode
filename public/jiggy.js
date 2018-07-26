@@ -17,7 +17,7 @@ var title = "";
 
 
 function dynamic() {
-    window.open('dynamic.html', '_self');
+    window.open('/search', '_self');
 };
 
 function search() {
