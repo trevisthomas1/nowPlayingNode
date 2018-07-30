@@ -71,7 +71,7 @@ function getTrailer() {
         var title = snapshot.val().title;
 
         $.ajax({
-            url: `https://www.googleapis.com/youtube/v3/search?i18nLanguages&part=snippet&hl=en_US&maxResults=5&order=viewCount&q=${title}officialtrailer&type=video&key=${ytube}`,
+            url: `https://www.googleapis.com/youtube/v3/dynamic?i18nLanguages&part=snippet&hl=en_US&maxResults=5&order=viewCount&q=${title}officialtrailer&type=video&key=${ytube}`,
             method: "GET",
 
         }).then(function (response) {

@@ -19,7 +19,7 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "./tv.html"));
     });
 
-    app.get("/search", function (req, res) {
+    app.get("/dynamic", function (req, res) {
         res.sendFile(path.join(__dirname, "./dynamic.html"));
     });
 };
