@@ -71,7 +71,7 @@ function getTrailer() {
         var title = snapshot.val().title;
 
         $.ajax({
-            url: `https://www.googleapis.com/youtube/v3/dynamic?i18nLanguages&part=snippet&hl=en_US&maxResults=5&order=viewCount&q=${title}officialtrailer&type=video&key=${ytube}`,
+            url: `https://www.googleapis.com/youtube/v3/search?i18nLanguages&part=snippet&hl=en_US&maxResults=5&order=viewCount&q=${title}officialtrailer&type=video&key=${ytube}`,
             method: "GET",
 
         }).then(function (response) {
@@ -80,7 +80,7 @@ function getTrailer() {
 
             $("#ytPlayer").append("<iframe id=\"player\" type\"text/html\" width=\"100%\" height=\"350px\" src=\"\" frameborder=\"0\"></iframe>");
 
-            $("#player").attr("src", "https://www.youtube.com/embed/" + response.items[1].id.videoId + "?autoplay=0");
+            $("#player").attr('src', "https://www.youtube.com/embed/" + response.items[1].id.videoId + "?autoplay=0");
 
         });
 
