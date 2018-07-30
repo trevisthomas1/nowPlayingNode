@@ -80,7 +80,7 @@ function getTrailer() {
 
             $("#ytPlayer").append("<iframe id=\"player\" type\"text/html\" width=\"100%\" height=\"350px\" src=\"\" frameborder=\"0\"></iframe>");
 
-            $("#player").attr('src', "https://www.youtube.com/embed/" + response.items[1].id.videoId + "?autoplay=0");
+            $("#player").attr("src", "https://www.youtube.com/embed/" + response.items[1].id.videoId + "?autoplay=0");
 
         });
 
@@ -108,7 +108,7 @@ function similarMovies() {
                 var releaseDate = response.results[i].release_date.substring(0, 4);
                 var titleDate = responseTitle + " (" + releaseDate + ") "
                 var id = "movie" + i;
-                var similarID = '<li id="' + id + '" class="similarLink" data-name="' + responseTitle + '">' + titleDate + '</li>';
+                var similarID = "<li id='" + id + "' class='similarLink' data-name='" + responseTitle + "'>" + titleDate +"</li>";
 
                 if (response.results[i].original_language == "en") {
                     $(".similarList").append(similarID);
@@ -130,11 +130,11 @@ function similarMovies() {
 };
 
 
-$('#bounce1').addClass('double-bounce1')
-$('#bounce2').addClass('double-bounce2')
+$("#bounce1").addClass("double-bounce1")
+$("#bounce2").addClass("double-bounce2")
 
-$('#bounce1').removeClass('double-bounce1')
-$('#bounce2').removeClass('double-bounce2')
+$("#bounce1").removeClass("double-bounce1")
+$("#bounce2").removeClass("double-bounce2")
 // Search Function
 function search() {
 
@@ -179,20 +179,20 @@ function search() {
 
 
 setTimeout(function () {
-    $('#bounce1').removeClass('double-bounce1');
-    $('#bounce2').removeClass('double-bounce2');
-    $('.spinner').remove();
-    $('.container').show();
+    $("#bounce1").removeClass("double-bounce1");
+    $("#bounce2").removeClass("double-bounce2");
+    $(".spinner").remove();
+    $(".container").show();
 
 
 
 }, 2000);
 
 
-$(window).on('load', function () {
-    $('#bounce1').addClass('double-bounce1');
-    $('#bounce2').addClass('double-bounce2');
-    $('.container').hide();
+$(window).on("load", function () {
+    $("#bounce1").addClass("double-bounce1");
+    $("#bounce2").addClass("double-bounce2");
+    $(".container").hide();
     renderPage();
     getTrailer();
     similarMovies();

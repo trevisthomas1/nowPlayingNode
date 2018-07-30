@@ -17,7 +17,7 @@ var title = "";
 
 
 function dynamic() {
-    window.open('/search', '_self');
+    window.open("/search", "_self");
 };
 
 function search() {
@@ -73,7 +73,7 @@ function movieList() {
         for (i = 0; i < 15; i++) {
             var responseTitle = response.results[i].original_title;
             var id = "movie" + i;
-            var listID = '<li id="' + id + '" class="movieLink" data-name="' + responseTitle + '">' + responseTitle + '</li>';
+            var listID = "<li id='" + id + "' class='movieLink' data-name='" + responseTitle + "'>" + responseTitle + "</li>";
 
             if (response.results[i].original_language == "en" && i < 10) {
                 $(".movieList").append(listID);
@@ -91,7 +91,7 @@ function movieList() {
             for (i = 0; i < 15; i++) {
                 var responseTitle = response.results[i].original_title;
                 var id = "movie" + i;
-                var listID = '<li id="' + id + '" class="movieLink" data-name="' + responseTitle + '">' + responseTitle + '</li>';
+                var listID = "<li id='" + id + "' class='movieLink' data-name='" + responseTitle + "'>" + responseTitle + "</li>";
 
                 if (response.results[i].original_language == "en") {
                     $(".topRated").append(listID);
@@ -127,7 +127,7 @@ function tvList() {
         for (i = 0; i < 15; i++) {
             var responseTitle = response.results[i].original_name;
             var id = "tv" + i;
-            var listID = '<li id="' + id + '" class="tvLink" data-name="">' + responseTitle + '</li>';
+            var listID = "<li id='" + id + "' class='tvLink' data-name=''>" + responseTitle + "</li>";
 
             if (response.results[i].origin_country == "US" && i < 10) {
                 $(".tvList").append(listID);
@@ -145,7 +145,7 @@ function tvList() {
             for (i = 0; i < 15; i++) {
                 var responseTitle = response.results[i].original_name;
                 var id = "tv" + i;
-                var listID = '<li id="' + id + '" class="tvLink" data-name="">' + responseTitle + '</li>';
+                var listID = "<li id='" + id + "' class='tvLink' data-name=''>" + responseTitle + "</li>";
 
                 if (response.results[i].origin_country == "US") {
                     $(".tvTopRated").append(listID);
@@ -169,15 +169,15 @@ function tvList() {
 function expand() {
     $(".search").toggleClass("close");
     $(".input").toggleClass("square");
-    if ($('.search').hasClass('close')) {
-        $('input').focus();
+    if ($(".search").hasClass("close")) {
+        $("input").focus();
     } else {
-        $('input').blur();
+        $("input").blur();
     }
 }
 
 
-$(window).on('load', function () {
+$(window).on("load", function () {
     tvList();
     movieList();
 });
@@ -207,7 +207,7 @@ $("#typeSearchButton").on("click", function (event) {
 });
 
 // Search Expand
-$('.search').on('click', expand);
+$(".search").on("click", expand);
 
 
 
