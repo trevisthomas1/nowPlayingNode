@@ -139,7 +139,7 @@ $("#bounce2").removeClass("double-bounce2")
 function search() {
 
     $.ajax({
-        url: "http://www.omdbapi.com/?t=" + title + "&y=&plot=short&type=movie&rating=&" + apiKey,
+        url: "https://www.omdbapi.com/?t=" + title + "&y=&plot=short&type=movie&rating=&" + apiKey,
         method: "GET"
     }).then(function (response) {
 
